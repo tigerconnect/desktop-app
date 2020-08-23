@@ -5,13 +5,30 @@
 The TigerConnect Desktop App may be downloaded at the following locations:
 
 * [Windows - Single-click installer](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect-Setup.exe)
-* [Windows - Admin installer](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect-Admin-Setup.exe)
 * [Mac OS](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect.dmg)
 * [Debian-compatible GNU/Linux](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect-latest.deb)
 
+Other installation options:
+
+* [Windows - Admin installer](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect-Admin-Setup.exe)
+
 ## Installation
 
-The following commandline arguments may be provided to the Windows installers:
+### Windows Installer Differences
+
+Windows Single-click installer:
+* It will install the TigerConnect Desktop App for the current user.
+* It will immediately launch the app after installation is complete.
+* It will automatically download and install updates when they are available, if your organization allows this.
+
+Windows Admin installer:
+* It will install the TigerConnect Desktop App for all users on the system.
+* It does not immediately launch the app after installation is complete.
+* It will never download and install updates.
+
+### Windows Commandline Options
+
+The following commandline options may be provided to the Windows installers:
 
 `/D="C:\Program Files"`
 * Set the installation directory.
