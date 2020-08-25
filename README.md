@@ -30,21 +30,28 @@ Windows Admin installer:
 
 The following commandline options may be provided to the Windows installers:
 
-`/D="C:\Program Files"`
+`/d="C:\Program Files"` or `/D="C:\Program Files"` or `/inst-dir="C:\Program Files"`
 * Set the installation directory.
 * Only absolute paths are supported.
 * If the path contains spaces, it must be wrapped in double-quote characters.
 * The path `\TigerConnect` will be added to the end of the supplied argument.
 
 `/run-at-startup=true`
-* If the Admin installer is executed, this option controls whether to automatically run the TigerConnect app at system startup.
-* If the Single-click installer is executed, this option controls whether to automatically run the TigerConnect app after the current user logs in.
+* If `true` (the default setting) and the Admin installer is executed, this option controls whether to automatically run the TigerConnect app at system startup.
+* If `true` (the default setting) and the Single-click installer is executed, this option controls whether to automatically run the TigerConnect app after the current user logs in.
+* If `false`, the TigerConnect app will not be executed at system startup or login.
 
-`/S`
+`/s` or `/S` or `/silent`
 * Do not show any prompts or UI during the installation process.
 
 `/?` or `/h` or `/help`
 * Show this webpage.
+
+Example:
+
+```sh
+TigerConnect-Admin-Setup.exe /silent /run-at-startup=false
+```
 
 ## Support
 
