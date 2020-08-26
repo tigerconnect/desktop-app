@@ -35,17 +35,21 @@ The following commandline options may be provided to the Windows installers:
 * Only absolute paths are supported.
 * If the path contains spaces, it must be wrapped in double-quote characters.
 * The path `\TigerConnect` will be added to the end of the supplied argument.
+* Not supported as an uninstaller option.
 
 `/run-at-startup=true`
 * If `true` (the default setting) and the Admin installer is executed, this option controls whether to automatically run the TigerConnect app at system startup.
 * If `true` (the default setting) and the Single-click installer is executed, this option controls whether to automatically run the TigerConnect app after the current user logs in.
 * If `false`, the TigerConnect app will not be executed at system startup or login.
+* Not supported as an uninstaller option.
 
 `/s` or `/S` or `/silent`
 * Do not show any prompts or UI during the installation process.
+* When calling the uninstaller, use capitalized `/S`; the other `/s` and `/silent` variations are not supported.
 
 `/?` or `/h` or `/help`
 * Show this webpage.
+* Not supported as an uninstaller option.
 
 Example:
 
