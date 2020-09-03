@@ -18,11 +18,13 @@ Other installation options:
 
 Windows Single-click installer:
 * It will install the TigerConnect Desktop App for the current user.
+* It will not prompt for the installation location.
 * It will immediately launch the app after installation is complete.
 * It will automatically download and install updates when they are available, if your organization allows this.
 
 Windows Admin installer:
 * It will install the TigerConnect Desktop App for all users on the system.
+* It will prompt for the installation location and whether to run the app at login.
 * It does not immediately launch the app after installation is complete.
 * It will never download and install updates.
 
@@ -56,7 +58,9 @@ Example:
 TigerConnect-Admin-Setup.exe /silent /run-at-login=false
 ```
 
-## User Configuration File
+## Advanced Topics
+
+### User Configuration File
 
 As an advanced feature, a user-specific configuration file named `config.yaml` is available in the following locations after installing the app on Windows or running the app at least once.
 
