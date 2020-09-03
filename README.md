@@ -56,6 +56,16 @@ Example:
 TigerConnect-Admin-Setup.exe /silent /run-at-login=false
 ```
 
+## User Configuration File
+
+As an advanced feature, a user-specific configuration file named `config.yaml` is available in the following locations after installing the app on Windows or running the app at least once.
+
+* Windows: `%APPDATA%\TigerConnect\config.yaml`; `%APPDATA%` is typically a value like `C:\Users\MyUser\AppData\Roaming`
+* Mac: `~/Library/Application Support/TigerConnect/config.yaml`
+* Linux: `~/.config/TigerConnect/config.yaml`
+
+It's not recommended to modify this file except at the behest of your TigerConnect support representative.
+
 ## Support
 
 If you have any questions please reach out to the TigerConnect team at any time by visiting [https://tigerconnect.com/support/](https://tigerconnect.com/support/).
