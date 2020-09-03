@@ -34,13 +34,12 @@ The following commandline options may be provided to the Windows installers:
 * Set the installation directory.
 * Only absolute paths are supported.
 * If the path contains spaces, it must be wrapped in double-quote characters.
-* The path `\TigerConnect` will be added to the end of the supplied argument.
+* The path `\TigerConnect` will be added to the end of the supplied argument if it is not present in the path argument.
 * Not supported as an uninstaller option.
 
-`/run-at-startup=true`
-* If `true` (the default setting) and the Admin installer is executed, this option controls whether to automatically run the TigerConnect app at system startup.
-* If `true` (the default setting) and the Single-click installer is executed, this option controls whether to automatically run the TigerConnect app after the current user logs in.
-* If `false`, the TigerConnect app will not be executed at system startup or login.
+`/run-at-login=true`
+* If `true` (the default setting), this option controls whether to automatically run the TigerConnect app after the current user logs in.
+* If `false`, the TigerConnect app will not be executed at login.
 * Not supported as an uninstaller option.
 
 `/s` or `/S` or `/silent`
@@ -54,7 +53,7 @@ The following commandline options may be provided to the Windows installers:
 Example:
 
 ```sh
-TigerConnect-Admin-Setup.exe /silent /run-at-startup=false
+TigerConnect-Admin-Setup.exe /silent /run-at-login=false
 ```
 
 ## Support
