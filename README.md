@@ -40,8 +40,16 @@ The following commandline options may be provided to the Windows installers:
 * Not supported as an uninstaller option.
 
 `/run-at-login=true`
-* If `true` (the default setting), this option controls whether to automatically run the TigerConnect app after the current user logs in.
-* If `false`, the TigerConnect app will not be executed at login.
+* If `true` (the default setting for the Single-Click installer):
+  * The TigerConnect app will be executed after the current user logs in.
+  * Not supported by the Admin installer.
+* If `false` (the default setting for the Admin installer):
+  * The TigerConnect app will not be executed when the current user logs in.
+  * Other users on the system, after they launch TigerConnect at least once, will have run-at-login enabled by default.
+* If `never` (only supported by the Admin installer):
+  * The TigerConnect app will not be executed when the current user logs in.
+  * Other users on the system, after they launch TigerConnect at least once, will have run-at-login disabled by default.
+  * Not supported by the Single-Click installer.
 * Not supported as an uninstaller option.
 
 `/s` or `/S` or `/silent`
@@ -59,6 +67,16 @@ TigerConnect-Admin-Setup.exe /silent /run-at-login=false
 ```
 
 ## Advanced Topics
+
+### System Configuration File
+
+As an advanced feature, a configuration file named `config.yaml` is available in the following locations after installing the app on Windows or running the app at least once. Settings here will be applied to every user on the system.
+
+* Windows: `%PROGRAMDATA%\TigerConnect\config.yaml`; `%PROGRAMDATA%` is typically a value like `C:\ProgramData`
+* Mac: `/Library/Application Support/TigerConnect/config.yaml`
+* Linux: `/opt/TigerConnect/config.yaml`
+
+It's not recommended to modify this file except at the behest of your TigerConnect support representative.
 
 ### User Configuration File
 
