@@ -1,5 +1,24 @@
 # TigerConnect Desktop App
 
+## Description
+
+The TigerConnect Desktop App is nearly identical to the Web Messenger in function, but provides additional features
+like notifications, icon badges, etc., and is more secure given there is no need to use a web browser. Additionally,
+for those users that wish to have priority messaging with TigerConnect, using the Desktop App allows for uncluttered
+access to TigerConnect in a standalone app.
+
+## Requirements
+
+**Desktop App for Windows**
+* Windows 7 (32/64-bit)
+* Windows 8/8.1 (32/64-bit)
+* Windows 10 (32/64-bit)
+* MSI (Server Installation – 32-bit only)
+* Supported Installs – Windows 7, 8, 8.1, 10
+
+**Desktop App for Mac**
+* OS X 10.8 (Mountain Lion) and newer
+
 ## Download
 
 The TigerConnect Desktop App may be downloaded at the following locations:
