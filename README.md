@@ -13,11 +13,13 @@ access to TigerConnect in a standalone app.
 * Windows 7 (32/64-bit)
 * Windows 8/8.1 (32/64-bit)
 * Windows 10 (32/64-bit)
-* MSI (Server Installation – 32-bit only)
-* Supported Installs – Windows 7, 8, 8.1, 10
 
 **Desktop App for Mac**
-* OS X 10.8 (Mountain Lion) and newer
+* OS X 10.10 (Yosemite) and newer (64-bit only)
+
+**Desktop App for Linux**
+* Debian 8 and newer
+* Ubuntu 12.04 and newer
 
 ## Download
 
