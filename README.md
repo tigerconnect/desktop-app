@@ -87,6 +87,21 @@ Example:
 TigerConnect-Admin-Setup.exe /silent /run-at-login=false
 ```
 
+## Application Commandline Options
+
+The following commandline options may be provided to the Windows application executable:
+
+`--enable-logging`
+
+* This is a Chromium flag and will print Chrome's internal logging to the console.
+* This can be useful when the application fails to open or when the DevTools cannot be opened.
+
+Example:
+
+```
+./TigerConnect.exe --enable-logging
+```
+
 ## Advanced Topics
 
 ### System Configuration File
