@@ -99,7 +99,7 @@ The following commandline options may be provided to the Windows application exe
 Example:
 
 ```
-./TigerConnect.exe --enable-logging
+TigerConnect.exe --enable-logging
 ```
 
 ## Advanced Topics
