@@ -60,6 +60,12 @@ The following commandline options may be provided to the Windows installers:
 * The path `\TigerConnect` will be added to the end of the supplied argument if it is not present in the path argument.
 * Not supported as an uninstaller option.
 
+`/disable-sandbox`
+* Disables the Chromium sandbox. This should be used with caution since sandboxing is a security feature, and should only be used at the direction of your TigerConnect support representative.
+* This may be necessary if you are running our application on a network drive.
+* Once installed, this setting can also be updated with `disableSandbox` in the configuration file described in [Advanced Topics](#advanced-topics).
+* Not supported as an uninstaller option.
+
 `/run-at-login=true`
 * If `true` (the default setting for the Single-Click installer):
   * The TigerConnect app will be executed after the current user logs in.
@@ -73,6 +79,13 @@ The following commandline options may be provided to the Windows installers:
   * Not supported by the Single-Click installer.
 * Not supported as an uninstaller option.
 
+`/url="https://login.tigerconnect.com/"` or `/URL="https://login.tigerconnect.com/"`
+* Set the URL the application will navigate to when opened. 
+* The URL must be wrapped in double-quote characters.
+* Once installed, this setting can also be updated with `targetUrl` in the configuration file described in [Advanced Topics](#advanced-topics).
+* If omitted, the application will default to opening "https://login.tigerconnect.com/".
+* Not supported as an uninstaller option.
+
 `/s` or `/S` or `/silent`
 * Do not show any prompts or UI during the installation process.
 * When calling the uninstaller, use capitalized `/S`; the other `/s` and `/silent` variations are not supported.
@@ -84,7 +97,7 @@ The following commandline options may be provided to the Windows installers:
 Example:
 
 ```sh
-TigerConnect-Admin-Setup.exe /silent /run-at-login=false
+TigerConnect-Admin-Setup.exe /silent /run-at-login=false /url="https://login.tigerconnect.com/"
 ```
 
 ## Application Commandline Options
