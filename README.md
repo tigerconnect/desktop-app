@@ -86,6 +86,12 @@ The following commandline options may be provided to the Windows installers:
 * If omitted, the application will default to opening "https://login.tigerconnect.com/".
 * Not supported as an uninstaller option.
 
+`/use-custom-notifications` 
+* Use our custom notifications.
+* This can be useful when the built-in ones do not work (e.g., with Citrix).
+* Once installed, this setting can also be updated with `useCustomNotifications` in the configuration file described in [Advanced Topics](#advanced-topics).
+* Not supported as an uninstaller option.
+
 `/s` or `/S` or `/silent`
 * Do not show any prompts or UI during the installation process.
 * When calling the uninstaller, use capitalized `/S`; the other `/s` and `/silent` variations are not supported.
@@ -98,6 +104,20 @@ Example:
 
 ```sh
 TigerConnect-Admin-Setup.exe /silent /run-at-login=false /url="https://login.tigerconnect.com/"
+```
+
+### Citrix Installation
+
+Our default application runs into some restrictions when used with Citrix. In order to work around those issues, we recommend installing TigerConnect with at least the following commandline options.
+
+```sh
+TigerConnect-Admin-Setup.exe /disable-sandbox /use-custom-notifications
+```
+
+Many adminstrators also prefer to install our application with the minimum amount of dialogs and control when the application starts manually.
+
+```sh
+TigerConnect-Admin-Setup.exe /disable-sandbox /use-custom-notifications /silent /run-at-login=never
 ```
 
 ## Application Commandline Options
@@ -140,3 +160,7 @@ It's not recommended to modify this file except at the behest of your TigerConne
 ## Support
 
 If you have any questions please reach out to the TigerConnect team at any time by visiting [https://tigerconnect.com/support/](https://tigerconnect.com/support/).
+
+## License
+
+The license for this application [may be viewed here](https://tigerconnect.github.io/desktop-app/license.html).
