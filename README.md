@@ -23,31 +23,36 @@ access to TigerConnect in a standalone app.
 
 ## Download
 
-The TigerConnect Desktop App may be downloaded at the following locations:
+The TigerConnect Desktop App Admin Installer for Windows may be downloaded at the following location:
+
+* [Windows - Admin installer](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect-Admin-Setup.exe)
+
+Other installation options:
 
 * [Windows - Single-click installer](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect-Setup.exe)
 * [Mac OS](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect.dmg)
 * [Debian-compatible GNU/Linux](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect-latest.deb)
 
-Other installation options:
-
-* [Windows - Admin installer](https://github.com/tigerconnect/desktop-app/releases/latest/download/TigerConnect-Admin-Setup.exe)
 
 ## Installation
 
 ### Windows Installer Differences
 
 Windows Single-click installer:
+* Single user experience.
 * It will install the TigerConnect Desktop App for the current user.
 * It will not prompt for the installation location.
 * It will immediately launch the app after installation is complete.
 * It will automatically download and install updates when they are available, if your organization allows this.
 
 Windows Admin installer:
+* Multi user experience.
+* For managed networks.
 * It will install the TigerConnect Desktop App for all users on the system.
 * It will prompt for the installation location and whether to run the app at login.
 * It does not immediately launch the app after installation is complete.
 * It will never download and install updates.
+* It will work on Windows Terminal Server and Citrix Xenapp/desktop
 
 ### Windows Commandline Options
 
@@ -58,13 +63,12 @@ The following commandline options may be provided to the Windows installers:
 * Only absolute paths are supported.
 * If the path contains spaces, it must be wrapped in double-quote characters.
 * The path `\TigerConnect` will be added to the end of the supplied argument if it is not present in the path argument.
-* Not supported as an uninstaller option.
+* If omitted, the application will default to installing to "C:\Program Files\TigerConnect".
 
 `/disable-sandbox`
 * Disables the Chromium sandbox. This should be used with caution since sandboxing is a security feature, and should only be used at the direction of your TigerConnect support representative.
 * This may be necessary if you are running our application on a network drive.
 * Once installed, this setting can also be updated with `disableSandbox` in the configuration file described in [Advanced Topics](#advanced-topics).
-* Not supported as an uninstaller option.
 
 `/run-at-login=true`
 * If `true` (the default setting for the Single-Click installer):
@@ -77,20 +81,18 @@ The following commandline options may be provided to the Windows installers:
   * The TigerConnect app will not be executed when the current user logs in.
   * Other users on the system, after they launch TigerConnect at least once, will have run-at-login disabled by default.
   * Not supported by the Single-Click installer.
-* Not supported as an uninstaller option.
 
-`/url="https://login.tigerconnect.com/"` or `/URL="https://login.tigerconnect.com/"`
-* Set the URL the application will navigate to when opened. 
+`/url="https://login.mysso.com/"` or `/URL="https://login.mysso.com/"`
+* The URL feature is only needed when SSO is enabled, please contact your TigerConnect Sales representative for this premium feature.
+* Set the URL the application will navigate to when opened.
 * The URL must be wrapped in double-quote characters.
 * Once installed, this setting can also be updated with `targetUrl` in the configuration file described in [Advanced Topics](#advanced-topics).
 * If omitted, the application will default to opening "https://login.tigerconnect.com/".
-* Not supported as an uninstaller option.
 
-`/use-custom-notifications` 
+`/use-custom-notifications`
 * Use our custom notifications.
 * This can be useful when the built-in ones do not work (e.g., with Citrix).
 * Once installed, this setting can also be updated with `useCustomNotifications` in the configuration file described in [Advanced Topics](#advanced-topics).
-* Not supported as an uninstaller option.
 
 `/s` or `/S` or `/silent`
 * Do not show any prompts or UI during the installation process.
@@ -98,7 +100,7 @@ The following commandline options may be provided to the Windows installers:
 
 `/?` or `/h` or `/help`
 * Show this webpage.
-* Not supported as an uninstaller option.
+
 
 Example:
 
@@ -119,6 +121,15 @@ Many adminstrators also prefer to install our application with the minimum amoun
 ```sh
 TigerConnect-Admin-Setup.exe /disable-sandbox /use-custom-notifications /silent /run-at-login=never
 ```
+### Uninstall
+
+The following command line switch is all that is needed to uninstall:
+
+Example:
+
+```
+TigerConnect-Admin-Setup.exe /S  (must use a capital S)
+```
 
 ## Application Commandline Options
 
@@ -136,6 +147,8 @@ TigerConnect.exe --enable-logging
 ```
 
 ## Advanced Topics
+
+**(Only needed when SSO is enabled, please contact your TigerConnect Sales representative for this premium feature)**
 
 ### System Configuration File
 
