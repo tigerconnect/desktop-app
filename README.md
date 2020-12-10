@@ -70,6 +70,11 @@ The following commandline options may be provided to the Windows installers:
 * This may be necessary if you are running our application on a network drive.
 * Once installed, this setting can also be updated with `disableSandbox` in the configuration file described in [Advanced Topics](#advanced-topics).
 
+`--force-run`
+* Runs the application after installation is complete.
+* This option has no effect on the one-click installer unless `/silent` is also passed, since the one-click installer will automatically run the application after installation is complete.
+* This option has no effect on the Admin installer.
+
 `/run-at-login=true`
 * If `true` (the default setting for the Single-Click installer):
   * The TigerConnect app will be executed after the current user logs in.
@@ -96,6 +101,7 @@ The following commandline options may be provided to the Windows installers:
 
 `/s` or `/S` or `/silent`
 * Do not show any prompts or UI during the installation process.
+* Causes the app to not be executed automatically by the one-click installer after installation is complete. To allow the app to execute automatically anyway, use `--force-run` option in addition to this option.
 * When calling the uninstaller, use capitalized `/S`; the other `/s` and `/silent` variations are not supported.
 
 `/?` or `/h` or `/help`
