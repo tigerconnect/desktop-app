@@ -75,6 +75,9 @@ The following commandline options may be provided to the Windows installers:
 * This option has no effect on the one-click installer unless `/silent` is also passed, since the one-click installer will automatically run the application after installation is complete.
 * This option cannot be used on the Admin installer unless `/silent` is also passed.
 
+`--no-desktop-shortcut`
+* Prevents the installer from creating a desktop shortcut for TigerConnect.
+
 `/run-at-login=true`
 * If `true` (the default setting for the Single-Click installer):
   * The TigerConnect app will be executed after the current user logs in.
