@@ -9,6 +9,9 @@ access to TigerConnect in a standalone app.
 
 ## Requirements
 
+**Hardware**
+* The TigerConnect Desktop App installer is less than 100 MB and requires at least 750 MB of disk space for installation.
+
 **Desktop App for Windows**
 * Windows 7 (32/64-bit)
 * Windows 8/8.1 (32/64-bit)
@@ -186,3 +189,19 @@ If you have any questions please reach out to the TigerConnect team at any time 
 ## License
 
 The license for this application [may be viewed here](https://tigerconnect.github.io/desktop-app/license.html).
+
+## Frequently Asked Questions (FAQs)
+
+### Do I Need .NET or Java Installed?
+
+No, our desktop application comes bundled with everything it needs to run.
+
+### Why Can't I See Notifications?
+
+Are you using Citrix? If so, you'll want to check out our [Citrix Installation section](#citrix-installation).
+
+Otherwise, please go through the following checklist.
+
+- Are notifications enabled in the TigerConnect application (User Profile -> Desktop App Settings)?
+- Is the Windows system notifications enabled and is TigerConnect allowed to send notifications?
+- Is Windows focus assist enabled and is TigerConnect in the priority list?
