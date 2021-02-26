@@ -205,3 +205,7 @@ Otherwise, please go through the following checklist.
 - Are notifications enabled in the TigerConnect application (User Profile -> Desktop App Settings)?
 - Is the Windows system notifications enabled and is TigerConnect allowed to send notifications?
 - Is Windows focus assist enabled and is TigerConnect in the priority list?
+
+### Is There an MSI Version Available?
+
+No, but you can either build one with free online tools or use the executable with a startup script in Group Policy to deploy. All the [switches](#windows-commandline-options) are built into the executable.
