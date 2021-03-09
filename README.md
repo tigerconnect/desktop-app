@@ -152,10 +152,15 @@ The following commandline options may be provided to the Windows application exe
 * This is a Chromium flag and will print Chrome's internal logging to the console.
 * This can be useful when the application fails to open or when the DevTools cannot be opened.
 
+`--disable-gpu`
+
+* This is a Chromium flag and will disable GPU hardware acceleration.
+* This can be useful when the application is running on a virtual environment where there is no GPU available.
+
 Example:
 
 ```
-TigerConnect.exe --enable-logging
+TigerConnect.exe --enable-logging --disable-gpu
 ```
 
 ## Advanced Topics
