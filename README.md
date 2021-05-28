@@ -135,12 +135,14 @@ TigerConnect-Admin-Setup.exe /disable-sandbox /use-custom-notifications /silent 
 ```
 ### Uninstall
 
-The following command line switch is all that is needed to uninstall:
+After installation, an uninstallation executable called `Uninstall TigerConnect.exe` can be located in the installation directory (`C:/Program Files/TigerConnect` by default).
+
+Running this executable will uninstall the TigerConnect desktop application. You can provide the `/S` commandline option (must use a capital "S") to not show any prompts or UI during the uninstallation process.
 
 Example:
 
 ```
-TigerConnect-Admin-Setup.exe /S  (must use a capital S)
+"Uninstall TigerConnect.exe" /S
 ```
 
 ## Application Commandline Options
