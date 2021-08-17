@@ -93,6 +93,20 @@ The following commandline options may be provided to the Windows installers:
   * Other users on the system, after they launch TigerConnect at least once, will have run-at-login disabled by default.
   * Not supported by the Single-Click installer.
 
+`/show-native-ext-login`
+* Displays a native login prompt for Basic HTTP authentication requests.
+* Once installed, this setting can also be updated with `showNativeExtLogin` in the configuration file described in [Advanced Topics](#advanced-topics).
+
+`/show-native-int-login-username`
+* Displays a native login prompt for TigerConnect credentials (username only).
+* If a TigerConnect password should be entered, please use the `show-native-int-login-username-password` commandline option instead.
+* Once installed, this setting can also be updated with `showNativeIntLoginUsername` in the configuration file described in [Advanced Topics](#advanced-topics).
+
+`/show-native-int-login-username-password`
+* Displays a native login prompt for TigerConnect credentials (username and password).
+* If only a TigerConnect username should be entered, please use the `show-native-int-login-username` commandline option instead.
+* Once installed, this setting can also be updated with `showNativeIntLoginUsernamePassword` in the configuration file described in [Advanced Topics](#advanced-topics).
+
 `/url="https://login.mysso.com/"` or `/URL="https://login.mysso.com/"`
 * The URL feature is only needed when SSO is enabled, please contact your TigerConnect Sales representative for this premium feature.
 * Set the URL the application will navigate to when opened.
@@ -133,6 +147,21 @@ Many adminstrators also prefer to install our application with the minimum amoun
 ```sh
 TigerConnect-Admin-Setup.exe /disable-sandbox /use-custom-notifications /silent /run-at-login=never
 ```
+
+### Imprivata Installation
+
+Our default application cannot be profiled with Imprivata. In order to work around that issue, we recommend installing TigerConnect with at least the following commandline options if users will be using an external authentication service that utilizes Basic HTTP authentication.
+
+```sh
+TigerConnect-Admin-Setup.exe /show-native-int-login-username /show-native-ext-login
+```
+
+If users will have TigerConnect-specific credentials (a username and password for our application), please use the following commandline option instead.
+
+```sh
+TigerConnect-Admin-Setup.exe /show-native-int-login-username-password
+```
+
 ### Uninstall
 
 After installation, an uninstallation executable called `Uninstall TigerConnect.exe` can be located in the installation directory (`C:/Program Files/TigerConnect` by default).
