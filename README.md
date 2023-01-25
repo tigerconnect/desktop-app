@@ -194,6 +194,14 @@ Example:
 TigerConnect.exe --enable-logging --disable-gpu
 ```
 
+## Upgrading
+
+The following steps may be used to upgrade TigerConnect Desktop App:
+* Download the installer for the new version that corresponds to your installation type (Admin or Single-click).
+* Run the installer.
+
+TigerConnect Desktop App is currently not able to remove a Single-click installation while using the Admin installer, since the Single-click installer is associated with a single user rather than the entire system. To recover from this situation, it is recommended to uninstall the Single-click version before trying to run the Admin installer.
+
 ## Advanced Topics
 
 **(Only needed when SSO is enabled, please contact your TigerConnect Sales representative for this premium feature)**
