@@ -188,12 +188,18 @@ TigerConnect-Admin-Setup.exe /show-native-int-login-username-password
 
 After installation, an uninstallation executable called `Uninstall TigerConnect.exe` can be located in the installation directory (`C:/Program Files/TigerConnect` by default).
 
-Running this executable will uninstall the TigerConnect desktop application. You can provide the `/S` commandline option (must use a capital "S") to not show any prompts or UI during the uninstallation process.
+Running this executable will uninstall the TigerConnect Desktop App. You can provide the `/S` commandline option (must use a capital "S") to not show any prompts or UI during the uninstallation process.
 
-Example:
+Example for Admin installation:
 
 ```
 "Uninstall TigerConnect.exe" /S
+```
+
+Example for Single-click installation (make sure to run this as the user who installed TigerConnect Desktop App):
+
+```
+"Uninstall TigerConnect.exe" /currentuser /S
 ```
 
 ### Upgrade
