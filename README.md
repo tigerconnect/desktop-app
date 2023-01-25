@@ -1,5 +1,27 @@
 # TigerConnect Desktop App
 
+- [TigerConnect Desktop App](#tigerconnect-desktop-app)
+  * [Description](#description)
+  * [Requirements](#requirements)
+  * [Download](#download)
+  * [Installation](#installation)
+    + [Windows Installer Differences](#windows-installer-differences)
+    + [Windows Commandline Options](#windows-commandline-options)
+    + [Citrix Installation](#citrix-installation)
+    + [Imprivata Installation](#imprivata-installation)
+    + [Uninstall](#uninstall)
+    + [Upgrade](#upgrade)
+  * [Application Commandline Options](#application-commandline-options)
+  * [Advanced Topics](#advanced-topics)
+    + [System Configuration File](#system-configuration-file)
+    + [User Configuration File](#user-configuration-file)
+  * [Support](#support)
+  * [License](#license)
+  * [Frequently Asked Questions (FAQs)](#frequently-asked-questions-faqs)
+    + [Do I Need .NET or Java Installed?](#do-i-need-net-or-java-installed)
+    + [Why Can't I See Notifications?](#why-cant-i-see-notifications)
+    + [Is There an MSI Version Available?](#is-there-an-msi-version-available)
+
 ## Description
 
 The TigerConnect Desktop App is nearly identical to the Web Messenger in function, but provides additional features
@@ -174,7 +196,7 @@ Example:
 "Uninstall TigerConnect.exe" /S
 ```
 
-## Upgrade
+### Upgrade
 
 The following steps may be used to upgrade TigerConnect Desktop App:
 * Download the installer for the new version that corresponds to your installation type (Admin or Single-click).
