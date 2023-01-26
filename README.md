@@ -1,5 +1,26 @@
 # TigerConnect Desktop App
 
+  * [Description](#description)
+  * [Requirements](#requirements)
+  * [Download](#download)
+  * [Installation](#installation)
+    + [Windows Installer Differences](#windows-installer-differences)
+    + [Windows Commandline Options](#windows-commandline-options)
+    + [Citrix Installation](#citrix-installation)
+    + [Imprivata Installation](#imprivata-installation)
+    + [Uninstall](#uninstall)
+    + [Upgrade](#upgrade)
+  * [Application Commandline Options](#application-commandline-options)
+  * [Advanced Topics](#advanced-topics)
+    + [System Configuration File](#system-configuration-file)
+    + [User Configuration File](#user-configuration-file)
+  * [Support](#support)
+  * [License](#license)
+  * [Frequently Asked Questions (FAQs)](#frequently-asked-questions-faqs)
+    + [Do I Need .NET or Java Installed?](#do-i-need-net-or-java-installed)
+    + [Why Can't I See Notifications?](#why-cant-i-see-notifications)
+    + [Is There an MSI Version Available?](#is-there-an-msi-version-available)
+
 ## Description
 
 The TigerConnect Desktop App is nearly identical to the Web Messenger in function, but provides additional features
@@ -166,13 +187,37 @@ TigerConnect-Admin-Setup.exe /show-native-int-login-username-password
 
 After installation, an uninstallation executable called `Uninstall TigerConnect.exe` can be located in the installation directory (`C:/Program Files/TigerConnect` by default).
 
-Running this executable will uninstall the TigerConnect desktop application. You can provide the `/S` commandline option (must use a capital "S") to not show any prompts or UI during the uninstallation process.
+Running this executable will uninstall the TigerConnect Desktop App. You can provide the `/S` commandline option (must use a capital "S") to not show any prompts or UI during the uninstallation process.
 
-Example:
+Example for Admin installation:
 
 ```
 "Uninstall TigerConnect.exe" /S
 ```
+
+Example for Single-click installation (make sure to run this as the user who installed TigerConnect Desktop App):
+
+```
+"Uninstall TigerConnect.exe" /currentuser /S
+```
+
+Continue reading the `Upgrade` section for an example of how to locate Single-click installations to clean up before running the Admin installer.
+
+### Upgrade
+
+The following steps may be used to upgrade TigerConnect Desktop App:
+* Download the installer for the new version that corresponds to your installation type (Admin or Single-click).
+* Run the installer.
+
+TigerConnect Desktop App is currently not able to remove a Single-click installation while using the Admin installer, since the Single-click installer is associated with a single user rather than the entire system. This may result in two app icons on the desktop, and two entries in the "Apps and Features" section of Control Panel.
+
+To recover from this situation, it is recommended to uninstall the Single-click version manually as the user who originally installed it. Such Single-click installs (for version 5.x or higher) can be detected by:
+* Open Registry Editor and search for `Uninstall TigerConnect.exe`
+* There should be a match in `Computer\HKEY_USERS\...\CurrentVersion\Uninstall\...` for a key named `QuietUninstallString`
+* Double click on the key, copy the "Value data" field.
+* Paste that command into a Terminal session that is running as the user who the installation belongs to (which can be determined from the path to the executable).
+* Execute that command to uninstall the Single-click variant of Desktop App.
+* If multiple people may be using the machine, continue searching Registry Editor for more matches in the `HKEY_USERS` namespace.
 
 ## Application Commandline Options
 
