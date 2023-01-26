@@ -1,6 +1,5 @@
 # TigerConnect Desktop App
 
-- [TigerConnect Desktop App](#tigerconnect-desktop-app)
   * [Description](#description)
   * [Requirements](#requirements)
   * [Download](#download)
@@ -210,15 +209,15 @@ The following steps may be used to upgrade TigerConnect Desktop App:
 * Download the installer for the new version that corresponds to your installation type (Admin or Single-click).
 * Run the installer.
 
-TigerConnect Desktop App is currently not able to remove a Single-click installation while using the Admin installer, since the Single-click installer is associated with a single user rather than the entire system. To recover from this situation, it is recommended to uninstall the Single-click version before trying to run the Admin installer.
+TigerConnect Desktop App is currently not able to remove a Single-click installation while using the Admin installer, since the Single-click installer is associated with a single user rather than the entire system. This may result in two app icons on the desktop, and two entries in the "Apps and Features" section of Control Panel.
 
-Such Single-click installs (for version 5.x or higher) can be detected by:
+To recover from this situation, it is recommended to uninstall the Single-click version manually as the user who originally installed it. Such Single-click installs (for version 5.x or higher) can be detected by:
 * Open Registry Editor and search for `Uninstall TigerConnect.exe`
 * There should be a match in `Computer\HKEY_USERS\...\CurrentVersion\Uninstall\...` for a key named `QuietUninstallString`
 * Double click on the key, copy the "Value data" field.
 * Paste that command into a Terminal session that is running as the user who the installation belongs to (which can be determined from the path to the executable).
 * Execute that command to uninstall the Single-click variant of Desktop App.
-* If multiple people may be using the machine, continue searching Registry Editor for more matches.
+* If multiple people may be using the machine, continue searching Registry Editor for more matches in the `HKEY_USERS` namespace.
 
 ## Application Commandline Options
 
