@@ -102,6 +102,10 @@ The following commandline options may be provided to the Windows installers:
 `--no-desktop-shortcut`
 * Prevents the installer from creating a desktop shortcut for TigerConnect.
 
+`/ntlm-domains="*.adomain.com, *.anotherdomain.com"`
+* A comma-separated list of servers for which integrated authentication is enabled. HTTP NTLM and Negotiate authentication will be tried.
+* Any domain listed will be considered for integrated auth.
+
 `/run-at-login=true`
 * If `true` (the default setting for the Single-Click installer):
   * The TigerConnect app will be executed after the current user logs in.
