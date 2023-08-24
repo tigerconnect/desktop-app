@@ -20,13 +20,14 @@
     + [Do I Need .NET or Java Installed?](#do-i-need-net-or-java-installed)
     + [Why Can't I See Notifications?](#why-cant-i-see-notifications)
     + [Is There an MSI Version Available?](#is-there-an-msi-version-available)
+    + [Why Isn't Integrated Windows Authentication SSO Working?](#why-isnt-integrated-windows-authentication-sso-working)
 
 ## Description
 
-The TigerConnect Desktop App is nearly identical to the Web Messenger in function, but provides additional features
-like notifications, icon badges, etc., and is more secure given there is no need to use a web browser. Additionally,
-for those users that wish to have priority messaging with TigerConnect, using the Desktop App allows for uncluttered
-access to TigerConnect in a standalone app.
+The TigerConnect Desktop App is nearly identical to the Web Messenger in function, but provides
+additional features like notifications, icon badges, etc., and is more secure given there is no need
+to use a web browser. Additionally, for those users that wish to have priority messaging with
+TigerConnect, using the Desktop App allows for uncluttered access to TigerConnect in a standalone app.
 
 ## Requirements
 
@@ -103,8 +104,9 @@ The following commandline options may be provided to the Windows installers:
 * Prevents the installer from creating a desktop shortcut for TigerConnect.
 
 `/ntlm-domains="*.adomain.com, *.anotherdomain.com"`
-* A comma-separated list of servers for which integrated authentication is enabled. HTTP NTLM and Negotiate authentication will be tried.
-* Any domain listed will be considered for integrated auth.
+* A comma-separated list of servers for which Integrated Windows Authentication is enabled. HTTP NTLM and Negotiate (Kerberos) authentication will be tried.
+* Any domain listed will be considered for Integrated Windows Authentication.
+* Enabling this option will have the additional effect of changing the way some Microsoft websites fingerprint the app, to ensure that SSO is correctly offered on Azure and other SAML landing pages (requires TigerConnect Desktop App 5.4.2 or later).
 
 `/run-at-login=true`
 * If `true` (the default setting for the Single-Click installer):
@@ -210,12 +212,14 @@ Continue reading the `Upgrade` section for an example of how to locate Single-cl
 ### Upgrade
 
 The following steps may be used to upgrade TigerConnect Desktop App:
+
 * Download the installer for the new version that corresponds to your installation type (Admin or Single-click).
 * Run the installer.
 
 TigerConnect Desktop App is currently not able to remove a Single-click installation while using the Admin installer, since the Single-click installer is associated with a single user rather than the entire system. This may result in two app icons on the desktop, and two entries in the "Apps and Features" section of Control Panel.
 
 To recover from this situation, it is recommended to uninstall the Single-click version manually as the user who originally installed it. Such Single-click installs (for version 5.x or higher) can be detected by:
+
 * Open Registry Editor and search for `Uninstall TigerConnect.exe`
 * There should be a match in `Computer\HKEY_USERS\...\CurrentVersion\Uninstall\...` for a key named `QuietUninstallString`
 * Double click on the key, copy the "Value data" field.
@@ -287,10 +291,18 @@ Are you using Citrix? If so, you'll want to check out our [Citrix Installation s
 
 Otherwise, please go through the following checklist.
 
-- Are notifications enabled in the TigerConnect application (User Profile -> Desktop App Settings)?
-- Is the Windows system notifications enabled and is TigerConnect allowed to send notifications?
-- Is Windows focus assist enabled and is TigerConnect in the priority list?
+* Are notifications enabled in the TigerConnect application (User Profile -> Desktop App Settings)?
+* Is the Windows system notifications enabled and is TigerConnect allowed to send notifications?
+* Is Windows focus assist enabled and is TigerConnect in the priority list?
 
 ### Is There an MSI Version Available?
 
 No, but you can either build one with free online tools or use the executable with a startup script in Group Policy to deploy. All the [switches](#windows-commandline-options) are built into the executable.
+
+### Why Isn't Integrated Windows Authentication SSO Working?
+
+You may need to try the following steps:
+
+* Is the `ntlmDomains` option set? That option may need to be provided so that certain SAML providers fingerprint TigerConnect Desktop App correctly and allow SSO to be offered. One such case is Azure.
+* Is the `targetUrl` option set? It may need to be either removed or (equivalently) returned to the default value of `"https://login.tigerconnect.com/app/messenger"` in order for the desired SSO flow to be triggered.
+* When you go to the View menu -> "Toggle Developer Tools", go to Network tab and check "Preserve log", go to View menu -> "Reload", continue the login process, and look through some of the network requests with `/ssoprobe` or `/wia` in them, are they successful with a `200` status? If not, it may be necessary to compare with using the [TigerConnect Messenger website](https://login.tigerconnect.com/app/messenger) in Chrome or Edge, and/or reach out to [TigerConnect Professional Support](https://tigerconnect.com/support/) to help diagnose.
