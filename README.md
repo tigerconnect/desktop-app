@@ -112,13 +112,18 @@ The following commandline options may be provided to the Windows installers:
 * If `true` (the default setting for the Single-Click installer):
   * The TigerConnect app will be executed after the current user logs in.
   * Not supported by the Admin installer.
+  * This has the effect of setting `hasInstalledAutoRun: false` (or removing the `hasInstalledAutoRun` setting) in the user-level configuration file, which can also be adjusted by editing that file as described in [Advanced Topics](#advanced-topics).
 * If `false` (the default setting for the Admin installer):
   * The TigerConnect app will not be executed when the current user logs in.
   * Other users on the system, after they launch TigerConnect at least once, will have run-at-login enabled by default.
+  * This has the effect of setting `hasInstalledAutoRun: true` (or removing the `hasInstalledAutoRun` setting) in the appropriate configuration file, which can also be adjusted by editing that file as described in [Advanced Topics](#advanced-topics).
 * If `never` (only supported by the Admin installer):
   * The TigerConnect app will not be executed when the current user logs in.
   * Other users on the system, after they launch TigerConnect at least once, will have run-at-login disabled by default.
   * Not supported by the Single-Click installer.
+  * This has the effect of setting `hasInstalledAutoRun: true` (or removing the `hasInstalledAutoRun` setting) in the system-level configuration file, which can also be adjusted by editing that file as described in [Advanced Topics](#advanced-topics).
+* If multiple TigerConnect accounts are shared by the same Windows account, and Imprivata is used to automatically launch the TigerConnect app and fill credentials, it is recommended to provide `/run-at-login=false` as an installer option.
+* Note: The installer will not try to directly add or remove the TigerConnect app from the Windows startup items.
 
 `/show-native-ext-login`
 * Displays a native login prompt for Basic HTTP authentication requests.
