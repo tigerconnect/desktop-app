@@ -261,20 +261,25 @@ TigerConnect.exe --enable-logging --disable-gpu
 As an advanced feature, a configuration file named `config.yaml` is available in the following locations after installing the app on Windows or running the app at least once. Settings here will be applied to every user on the system.
 
 * Windows: `%PROGRAMDATA%\TigerConnect\config.yaml`; `%PROGRAMDATA%` is typically a value like `C:\ProgramData`
-* Mac: `/Library/Application Support/TigerConnect/config.yaml`
+* Mac (Standalone version): `/Library/Application Support/TigerConnect/config.yaml`
 * Linux: `/opt/TigerConnect/config.yaml`
 
 It's not recommended to modify this file except at the behest of your TigerConnect support representative.
+
+Note that the Mac App Store version does not have a system configuration file.
 
 ### User Configuration File
 
 As an advanced feature, a user-specific configuration file named `config.yaml` is available in the following locations after installing the app on Windows or running the app at least once.
 
 * Windows: `%APPDATA%\TigerConnect\config.yaml`; `%APPDATA%` is typically a value like `C:\Users\MyUser\AppData\Roaming`
-* Mac: `~/Library/Application Support/TigerConnect/config.yaml`
+* Mac (Standalone version): `~/Library/Application Support/TigerConnect/config.yaml`
+* Mac (App Store version): `~/Library/Containers/com.tigerconnect.macos/Data/Library/Application Support/TigerConnect/config.yaml`
 * Linux: `~/.config/TigerConnect/config.yaml`
 
 It's not recommended to modify this file except at the behest of your TigerConnect support representative.
+
+Note that on the Mac App Store version, when editing `config.yaml` you may be prompted by OS X about allowing your editor access to other apps, and that has to be approved in order for the edits to succeed.
 
 ## Support
 
