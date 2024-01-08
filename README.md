@@ -273,8 +273,8 @@ Note that the Mac App Store version does not have a system configuration file.
 As an advanced feature, a user-specific configuration file named `config.yaml` is available in the following locations after installing the app on Windows or running the app at least once.
 
 * Windows: `%APPDATA%\TigerConnect\config.yaml`; `%APPDATA%` is typically a value like `C:\Users\MyUser\AppData\Roaming`
-* Mac (Standalone version): `~/Library/Application Support/TigerConnect/config.yaml`
-* Mac (App Store version): `~/Library/Containers/com.tigerconnect.macos/Data/Library/Application Support/TigerConnect/config.yaml`
+* Mac (Standalone version): `/Users/<user>/Library/Application Support/TigerConnect/config.yaml`
+* Mac (App Store version): `/Users/<user>/Library/Containers/com.tigerconnect.macos/Data/Library/Application Support/TigerConnect/config.yaml`
 * Linux: `~/.config/TigerConnect/config.yaml`
 
 It's not recommended to modify this file except at the behest of your TigerConnect support representative.
