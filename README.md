@@ -38,6 +38,7 @@ TigerConnect, using the Desktop App allows for uncluttered access to TigerConnec
 * Windows 7 (32/64-bit)
 * Windows 8/8.1 (32/64-bit)
 * Windows 10 (32/64-bit)
+* Windows 11 (64-bit)
 
 **Desktop App for Mac**
 * OS X 10.10 (Yosemite) and newer (64-bit only)
